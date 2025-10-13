@@ -1,10 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://civwld5mdkc2m"]
+[gd_scene load_steps=5 format=3 uid="uid://civwld5mdkc2m"]
 
+[ext_resource type="Script" uid="uid://4y2vu8582cts" path="res://scripts/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dw7ogsi5omdjk" path="res://scenes/player.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://di8owuwh4254c" path="res://scenes/pumpkin.tscn" id="2_yqjtg"]
+
+[sub_resource type="Curve2D" id="Curve2D_yqjtg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -463, -261, 0, 0, 0, 0, 445, -248, 0, 0, 0, 0, 448, 251, 0, 0, 0, 0, -468, 250, 0, 0, 0, 0, -463, -261, 0, 0, 0, 0, 311, 158, 0, 0, 0, 0, 292, -142, 0, 0, 0, 0, 147, -126, 0, 0, 0, 0, -336, 158, 0, 0, 0, 0, -463, -261)
+}
+point_count = 10
 
 [node name="game" type="Node2D"]
+script = ExtResource("1_lnu2h")
+pumpkin_scene = ExtResource("2_yqjtg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="player" parent="." instance=ExtResource("1_uwrxv")]
 position = Vector2(12, 6)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_yqjtg")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-463, -261)
+rotation = 0.014316203
