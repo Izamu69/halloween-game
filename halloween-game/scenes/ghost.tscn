@@ -17,7 +17,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbnym"]
 size = Vector2(128, 128)
 
-[node name="ghost" type="CharacterBody2D"]
+[node name="ghost" type="CharacterBody2D" groups=["ghosts"]]
 z_index = 1
 script = ExtResource("1_l5lq6")
 
