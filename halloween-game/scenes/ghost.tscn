@@ -19,6 +19,7 @@ size = Vector2(128, 128)
 
 [node name="ghost" type="CharacterBody2D" groups=["ghosts"]]
 z_index = 1
+collision_layer = 2
 script = ExtResource("1_l5lq6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

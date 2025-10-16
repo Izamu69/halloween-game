@@ -14,4 +14,8 @@ func _physics_process(_delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ghosts"):
-		body.run_away()
+		body.afraid = true
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	if body.is_in_group("ghosts"):
+		body.afraid = false

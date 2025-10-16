@@ -6,6 +6,7 @@ extends Node2D
 func _ready() -> void:
 	spawn_pumpkin()
 	spawn_ghost()
+	spawn_ghost()
 
 func _process(_delta: float) -> void:
 	if !get_node(".").has_node("pumpkin"):
