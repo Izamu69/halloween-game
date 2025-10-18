@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqxhimorb137e"
-path="res://.godot/imported/pumpkin.png-ad88d63400460ec921fceaedc220c3e8.ctex"
+uid="uid://5ku1kw351qi3"
+path="res://.godot/imported/player_walk.png-f9563979fa75f138a78c66bd5984c9e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/pumpkin.png"
-dest_files=["res://.godot/imported/pumpkin.png-ad88d63400460ec921fceaedc220c3e8.ctex"]
+source_file="res://assets/sprites/player_walk.png"
+dest_files=["res://.godot/imported/player_walk.png-f9563979fa75f138a78c66bd5984c9e5.ctex"]
 
 [params]
 
