@@ -7,23 +7,21 @@
 
 [sub_resource type="Curve2D" id="Curve2D_yqjtg"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -463, -261, 0, 0, 0, 0, 445, -248, 0, 0, 0, 0, 448, 251, 0, 0, 0, 0, -468, 250, 0, 0, 0, 0, -463, -261, 0, 0, 0, 0, -463, -261, 0, 0, 0, 0, -463, -261)
+"points": PackedVector2Array(0, 0, 0, 0, 9, 8, 0, 0, 0, 0, 230, 9, 0, 0, 0, 0, 228, 122, 0, 0, 0, 0, 9, 120, 0, 0, 0, 0, 9, 8)
 }
-point_count = 7
+point_count = 5
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_lnu2h")
 pumpkin_scene = ExtResource("2_yqjtg")
 ghost_scene = ExtResource("4_lbhrr")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="player" parent="." instance=ExtResource("1_uwrxv")]
-position = Vector2(12, 6)
+position = Vector2(157, 84)
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_yqjtg")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-463, -261)
-rotation = 0.014316203
+position = Vector2(9, 8)
+rotation = 0.004524856

@@ -15,6 +15,14 @@ run/main_scene="uid://civwld5mdkc2m"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=240
+window/size/viewport_height=135
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
+
 [global_group]
 
 ghosts=""

@@ -15,12 +15,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l5lq6"]
-radius = 54.0
-height = 124.0
+radius = 5.0
+height = 12.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bbnym"]
-radius = 55.0
-height = 128.0
+radius = 6.0
+height = 14.0
 
 [node name="ghost" type="CharacterBody2D" groups=["ghosts"]]
 z_index = 1
@@ -28,19 +28,17 @@ collision_layer = 2
 script = ExtResource("1_l5lq6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 1.9073486e-06)
-scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_l5lq6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6, 4)
+position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_l5lq6")
 
 [node name="Area2D" type="Area2D" parent="."]
-position = Vector2(6, 4)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_bbnym")
 debug_color = Color(0.31715378, 0.49217337, 1, 0.41960785)
 

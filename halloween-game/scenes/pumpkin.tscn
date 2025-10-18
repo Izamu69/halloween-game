@@ -15,20 +15,19 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ch6vm"]
-radius = 57.395317
+radius = 7.0
 
 [node name="pumpkin" type="StaticBody2D"]
 scale = Vector2(0.75, 0.75)
 script = ExtResource("1_ch6vm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_qdl88")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 8)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_ch6vm")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
