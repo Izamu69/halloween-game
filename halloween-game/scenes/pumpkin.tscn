@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://di8owuwh4254c"]
 
 [ext_resource type="Script" uid="uid://ciqvhg5qbotqg" path="res://scripts/pumpkin.gd" id="1_ch6vm"]
-[ext_resource type="Texture2D" uid="uid://dqmg2xbio3q2h" path="res://assets/sprites/pumpkin.png" id="2_ch6vm"]
+[ext_resource type="Texture2D" uid="uid://cqxhimorb137e" path="res://assets/sprites/pumpkin.png" id="2_ch6vm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qdl88"]
 animations = [{
@@ -14,8 +14,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch6vm"]
-size = Vector2(128, 128)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ch6vm"]
+radius = 57.395317
 
 [node name="pumpkin" type="StaticBody2D"]
 scale = Vector2(0.75, 0.75)
@@ -28,6 +28,7 @@ sprite_frames = SubResource("SpriteFrames_qdl88")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_ch6vm")
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_ch6vm")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

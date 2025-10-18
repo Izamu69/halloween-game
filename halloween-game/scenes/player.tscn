@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://dw7ogsi5omdjk"]
+[gd_scene load_steps=14 format=3 uid="uid://dw7ogsi5omdjk"]
 
 [ext_resource type="Script" uid="uid://d2ukcm1pmec86" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://deky11xbsi1dc" path="res://assets/sprites/player_idle.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://5ku1kw351qi3" path="res://assets/sprites/player_walk.png" id="3_dqkch"]
+[ext_resource type="Texture2D" uid="uid://r8hlif6ps11e" path="res://assets/sprites/light.png" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("2_qhqgy")
@@ -66,10 +67,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
-size = Vector2(128, 128)
+size = Vector2(96, 128)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
-radius = 120.30378
+radius = 163.00307
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 z_index = 2
@@ -86,18 +87,17 @@ frame_progress = 0.6973447
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qhqgy")
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(-2, 0)
+[node name="Light" type="Area2D" parent="."]
 rotation = 1.5707964
 collision_mask = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-position = Vector2(-1.4861872e-06, -22)
-rotation = -1.5707964
-scale = Vector2(8.625001, 8)
+[node name="Sprite2D" type="Sprite2D" parent="Light"]
+position = Vector2(1.5, 1.6686988e-07)
+scale = Vector2(10.062499, 10.156249)
+texture = ExtResource("4_dqkch")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Light"]
 shape = SubResource("CircleShape2D_qhqgy")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Light" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Light" to="." method="_on_area_2d_body_exited"]

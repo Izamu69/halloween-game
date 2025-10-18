@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdmvjrwkbsv4f"]
+[gd_scene load_steps=6 format=3 uid="uid://cdmvjrwkbsv4f"]
 
 [ext_resource type="Script" uid="uid://b54mesf87n407" path="res://scripts/ghost.gd" id="1_l5lq6"]
 [ext_resource type="Texture2D" uid="uid://belm7hp1x6rjb" path="res://assets/sprites/ghost.png" id="2_l5lq6"]
@@ -14,8 +14,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbnym"]
-size = Vector2(128, 128)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l5lq6"]
+radius = 54.0
+height = 124.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bbnym"]
+radius = 55.0
+height = 128.0
 
 [node name="ghost" type="CharacterBody2D" groups=["ghosts"]]
 z_index = 1
@@ -28,4 +33,15 @@ scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_l5lq6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_bbnym")
+position = Vector2(6, 4)
+shape = SubResource("CapsuleShape2D_l5lq6")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(6, 4)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_bbnym")
+debug_color = Color(0.31715378, 0.49217337, 1, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
