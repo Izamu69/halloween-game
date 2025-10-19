@@ -87,7 +87,7 @@ frame_progress = 0.6973447
 shape = SubResource("RectangleShape2D_qhqgy")
 
 [node name="Light" type="Area2D" parent="."]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Light"]
