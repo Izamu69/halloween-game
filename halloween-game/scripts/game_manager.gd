@@ -2,11 +2,13 @@ extends Node2D
 
 @export var pumpkin_scene: PackedScene
 @export var ghost_scene: PackedScene
+@export var top_right_scene: PackedScene
 
 func _ready() -> void:
 	spawn_pumpkin()
 	spawn_ghost()
 	spawn_ghost()
+	spawn_top_right()
 
 func _process(_delta: float) -> void:
 	if !get_node(".").has_node("pumpkin"):
@@ -31,3 +33,7 @@ func spawn_ghost() -> void:
 	ghost.position = ghost_spawn_location.position
 	
 	add_child(ghost)
+
+func spawn_top_right() -> void:
+	var top_right = top_right_scene.instantiate()
+	add_child(top_right)
