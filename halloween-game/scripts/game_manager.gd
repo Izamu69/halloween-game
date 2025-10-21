@@ -3,25 +3,34 @@ extends Node2D
 @export var pumpkin_scene: PackedScene
 @export var ghost_scene: PackedScene
 @export var top_right_scene: PackedScene
+var spawn_points
 
 func _ready() -> void:
+	spawn_top_right()
+	spawn_points = get_tree().get_nodes_in_group("pumpkin_spawns")
+	print(spawn_points)
 	spawn_pumpkin()
 	spawn_ghost()
 	spawn_ghost()
-	spawn_top_right()
 
 func _process(_delta: float) -> void:
 	if !get_node(".").has_node("pumpkin"):
 		spawn_pumpkin()
 
+var last_pumpkin_position = null
 func spawn_pumpkin() -> void:
+	if spawn_points.is_empty():
+		return
+	
+	var available_spawns = spawn_points.duplicate()
+	if last_pumpkin_position and available_spawns.size() > 1:
+		available_spawns.erase(last_pumpkin_position)
+
+	var spawn = available_spawns[randi() % available_spawns.size()]
+	last_pumpkin_position = spawn
+	
 	var pumpkin = pumpkin_scene.instantiate()
-	
-	var pumpkin_spawn_location = $Path2D/PathFollow2D
-	pumpkin_spawn_location.progress_ratio = randf()
-	
-	pumpkin.position = pumpkin_spawn_location.position
-	
+	pumpkin.position = spawn.global_position
 	add_child(pumpkin)
 
 func spawn_ghost() -> void:
