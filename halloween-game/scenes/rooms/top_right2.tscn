@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=4 uid="uid://b18fi0dqfgnso"]
+
+[ext_resource type="Texture2D" uid="uid://saafe8vtfhp" path="res://assets/sprites/tileset.png" id="1_67nsw"]
+[ext_resource type="PackedScene" uid="uid://c3a55urt3bugh" path="res://scenes/pumpkin_spawn.tscn" id="2_blqe7"]
+[ext_resource type="PackedScene" uid="uid://cjwa6fcstt5v6" path="res://scenes/ghost_spawn.tscn" id="3_ja3sj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h28ut"]
+texture = ExtResource("1_67nsw")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -8, 6, -8, 6, 8, -6, 8)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4.9817715, -8, 4.9817715, -8, 5.0464687, 8, -5.111168, 8)
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+1:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+1:7/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cyid1"]
+physics_layer_0/collision_layer = 4
+sources/0 = SubResource("TileSetAtlasSource_h28ut")
+
+[node name="top_right" type="TileMapLayer"]
+tile_map_data = PackedByteArray("AAAPAAEAAAAAAAAAAAAQAAIAAAACAAEAAAAPAAMAAAABAAMAAAAQAAMAAAABAAQAAAASAAMAAAADAAEAAAARAAEAAAAJAAAAAAA=")
+tile_set = SubResource("TileSet_cyid1")
+
+[node name="pumpkin_spawn" parent="." instance=ExtResource("2_blqe7")]
+position = Vector2(296, 24)
+
+[node name="ghost_spawn" parent="." instance=ExtResource("3_ja3sj")]
+position = Vector2(248, 24)

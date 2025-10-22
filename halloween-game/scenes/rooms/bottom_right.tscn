@@ -42,7 +42,7 @@ physics_layer_0/collision_layer = 4
 sources/0 = SubResource("TileSetAtlasSource_104d1")
 
 [node name="bottom_right" type="TileMapLayer"]
-tile_map_data = PackedByteArray(0, 0, 16, 0, 7, 0, 0, 0, 2, 0, 0, 0, 0, 0, 17, 0, 8, 0, 0, 0, 1, 0, 1, 0, 0, 0, 17, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 16, 0, 7, 0, 0, 0, 2, 0, 0, 0, 0, 0, 17, 0, 8, 0, 0, 0, 1, 0, 1, 0, 0, 0, 17, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 18, 0, 9, 0, 0, 0, 9, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_nv0bt")
 
 [node name="pumpkin_spawn" parent="." instance=ExtResource("2_ngr00")]
