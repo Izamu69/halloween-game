@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=4 uid="uid://b47lm642l3ea8"]
+[gd_scene load_steps=6 format=4 uid="uid://b47lm642l3ea8"]
 
 [ext_resource type="Texture2D" uid="uid://saafe8vtfhp" path="res://assets/sprites/tileset.png" id="1_fy80g"]
+[ext_resource type="PackedScene" uid="uid://c3a55urt3bugh" path="res://scenes/pumpkin_spawn.tscn" id="2_7dxut"]
+[ext_resource type="PackedScene" uid="uid://cjwa6fcstt5v6" path="res://scenes/ghost_spawn.tscn" id="3_dlvv3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h28ut"]
 texture = ExtResource("1_fy80g")
@@ -43,5 +45,8 @@ sources/0 = SubResource("TileSetAtlasSource_h28ut")
 tile_map_data = PackedByteArray("AAASAAEAAAAAAAEAAAARAAEAAAADAAEAAAARAAIAAAACAAUAAAARAAMAAAABAAQAAAAQAAMAAAACAAQAAAAPAAEAAAAJAAAAAAA=")
 tile_set = SubResource("TileSet_cyid1")
 
-[node name="Marker2D" type="Marker2D" parent="." groups=["pumpkin_spawns"]]
-position = Vector2(296, 39)
+[node name="pumpkin_spawn" parent="." instance=ExtResource("2_7dxut")]
+position = Vector2(296, 40)
+
+[node name="ghost_spawn" parent="." instance=ExtResource("3_dlvv3")]
+position = Vector2(296, 24)

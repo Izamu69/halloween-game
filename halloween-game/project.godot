@@ -29,6 +29,7 @@ window/stretch/aspect="ignore"
 ghosts=""
 player=""
 pumpkin_spawns=""
+ghost_spawns=""
 
 [input]
 

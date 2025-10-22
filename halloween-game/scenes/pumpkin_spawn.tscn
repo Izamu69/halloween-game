@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://c3a55urt3bugh"]
+
+[node name="pumpkin_spawn" type="Marker2D" groups=["pumpkin_spawns"]]

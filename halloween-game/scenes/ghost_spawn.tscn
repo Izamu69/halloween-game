@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cjwa6fcstt5v6"]
+
+[node name="ghost_spawn" type="Marker2D" groups=["ghost_spawns"]]
