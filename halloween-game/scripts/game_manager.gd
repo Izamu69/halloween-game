@@ -25,6 +25,7 @@ var pumpkin_spawn_points
 var ghost_spawn_points
 
 func _ready() -> void:
+	PumpkinCount.pumpkin_count = 0
 	spawn_top_right()
 	spawn_top_left()
 	spawn_middle_left()
@@ -40,6 +41,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if !get_node(".").has_node("pumpkin"):
 		spawn_pumpkin()
+		PumpkinCount.increase_count()
+		print(PumpkinCount.pumpkin_count)
 
 var last_pumpkin_position = null
 func spawn_pumpkin() -> void:

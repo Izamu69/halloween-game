@@ -15,6 +15,10 @@ run/main_scene="uid://civwld5mdkc2m"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+PumpkinCount="*res://pumpkin_count.gd"
+
 [display]
 
 window/size/viewport_width=320
