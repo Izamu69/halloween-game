@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b715y47fhhanu"]
+[gd_scene load_steps=6 format=3 uid="uid://b715y47fhhanu"]
 
 [ext_resource type="Script" uid="uid://dsyv7cdfbxk5n" path="res://scripts/game_over.gd" id="1_xeevv"]
+[ext_resource type="Texture2D" uid="uid://dyaxb84awousp" path="res://assets/sprites/r_key.png" id="2_7m3ot"]
 [ext_resource type="FontFile" uid="uid://bu15ayguefxuh" path="res://assets/fonts/PixelOperator8.ttf" id="2_tbwuq"]
 [ext_resource type="FontFile" uid="uid://c6cdbfox8xgxd" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_racf3"]
+[ext_resource type="Texture2D" uid="uid://cvf6shwqjrbw5" path="res://assets/sprites/q_key.png" id="5_v3hpu"]
 
 [node name="game_over" type="Control"]
 layout_mode = 3
@@ -29,6 +31,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 22
 
+[node name="RKey" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(121, 82)
+scale = Vector2(2, 2)
+texture = ExtResource("2_7m3ot")
+
 [node name="Label3" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -52,7 +59,12 @@ text = "Restart"
 [node name="Label4" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_tbwuq")
-text = "Main menu"
+text = "To menu"
+
+[node name="QKey" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(121, 119)
+scale = Vector2(2, 2)
+texture = ExtResource("5_v3hpu")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = 1
