@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg25revcpcuxi"]
+
+[ext_resource type="Script" uid="uid://de4872gup7vun" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://bu15ayguefxuh" path="res://assets/fonts/PixelOperator8.ttf" id="1_l6cm7"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ekxnf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.16862746, 0.22352941, 0.2627451, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 17
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.61960787, 0.25882354, 0.15686275, 1)
+theme_override_fonts/font = ExtResource("1_l6cm7")
+text = "Pumpkin hunt"
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.72156864, 0.5058824, 0.23529412, 1)
+theme_override_fonts/font = ExtResource("1_l6cm7")
+text = "High score: 0"
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_l6cm7")
+text = "Play"
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_l6cm7")
+text = "Quit"
