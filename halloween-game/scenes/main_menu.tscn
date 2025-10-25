@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dg25revcpcuxi"]
+[gd_scene load_steps=6 format=3 uid="uid://dg25revcpcuxi"]
 
 [ext_resource type="Script" uid="uid://de4872gup7vun" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://bu15ayguefxuh" path="res://assets/fonts/PixelOperator8.ttf" id="1_l6cm7"]
 [ext_resource type="Texture2D" uid="uid://cttnktf2ne2wt" path="res://assets/sprites/e_key.png" id="3_wu84c"]
 [ext_resource type="Texture2D" uid="uid://cvf6shwqjrbw5" path="res://assets/sprites/q_key.png" id="4_8ln24"]
+[ext_resource type="AudioStream" uid="uid://bd12cwpvj8r81" path="res://assets/music/DavidKBD - Spooky Pack - Spooky Playtime-08 - Whispers of Darkness.ogg" id="5_8ln24"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -73,3 +74,8 @@ text = "Quit"
 position = Vector2(73, 6.5)
 scale = Vector2(2, 2)
 texture = ExtResource("4_8ln24")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_8ln24")
+autoplay = true
+bus = &"Music"

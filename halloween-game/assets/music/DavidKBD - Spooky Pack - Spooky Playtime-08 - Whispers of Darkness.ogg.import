@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bd12cwpvj8r81"
+path="res://.godot/imported/DavidKBD - Spooky Pack - Spooky Playtime-08 - Whispers of Darkness.ogg-a74df61fb906f30f4eaa52640f763bce.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/music/DavidKBD - Spooky Pack - Spooky Playtime-08 - Whispers of Darkness.ogg"
+dest_files=["res://.godot/imported/DavidKBD - Spooky Pack - Spooky Playtime-08 - Whispers of Darkness.ogg-a74df61fb906f30f4eaa52640f763bce.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
