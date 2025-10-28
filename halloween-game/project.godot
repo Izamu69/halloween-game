@@ -13,6 +13,8 @@ config_version=5
 config/name="HalloweenGame"
 run/main_scene="uid://dg25revcpcuxi"
 config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0.16862746, 0.22352941, 0.2627451, 1)
+boot_splash/image="uid://byosraep1e7w"
 config/icon="res://icon.svg"
 
 [autoload]
