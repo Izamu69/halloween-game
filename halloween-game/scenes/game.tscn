@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://civwld5mdkc2m"]
+[gd_scene load_steps=23 format=4 uid="uid://civwld5mdkc2m"]
 
 [ext_resource type="Script" uid="uid://4y2vu8582cts" path="res://scripts/game_manager.gd" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dw7ogsi5omdjk" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://c6ngltojsneln" path="res://scenes/rooms/bottom_left.tscn" id="9_dinhu"]
 [ext_resource type="PackedScene" uid="uid://dpdno1gd3xx2l" path="res://scenes/rooms/bottom_left2.tscn" id="10_kvuet"]
 [ext_resource type="PackedScene" uid="uid://bu1rnwegv1ju4" path="res://scenes/rooms/top_left2.tscn" id="12_rysoc"]
-[ext_resource type="AudioStream" uid="uid://u4d5rvw76bjn" path="res://assets/music/DavidKBD - Halloween 2024 Pack - Whimsical Witches.ogg" id="19_264po"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p57ef"]
 texture = ExtResource("5_iywne")
@@ -128,7 +127,10 @@ tile_set = SubResource("TileSet_0tnpc")
 [node name="pumpkin_spawn" parent="." instance=ExtResource("8_gee14")]
 position = Vector2(136, 24)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("19_264po")
-autoplay = true
-bus = &"Music"
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 100
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 325.0
+offset_bottom = 184.0
+color = Color(0.49803922, 0.05882353, 0.15686275, 0.11764706)

@@ -24,6 +24,8 @@ func _physics_process(_delta: float) -> void:
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("player") and not game_over:
 		game_over = true
-		var tree = get_tree()
-		if tree:
-			tree.call_deferred("change_scene_to_file", "res://scenes/game_over.tscn")
+		player.process_mode = Node.PROCESS_MODE_DISABLED
+		SceneChanger.change_scene_with_fade(
+			"res://scenes/game_over.tscn",
+			"res://assets/music/DavidKBD - Halloween 2024 Pack - Foggy Graveyard.ogg"
+		)

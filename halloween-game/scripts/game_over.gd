@@ -8,6 +8,12 @@ func _ready() -> void:
 
 func _input(_event):
 	if Input.is_key_pressed(KEY_R):
-		get_tree().change_scene_to_file("res://scenes/game.tscn")
+		SceneChanger.change_scene_with_fade(
+			"res://scenes/game.tscn",
+			"res://assets/music/DavidKBD - Halloween 2024 Pack - Whimsical Witches.ogg"
+		)
 	if Input.is_key_pressed(KEY_Q):
-		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		SceneChanger.change_scene_with_fade(
+			"res://scenes/main_menu.tscn",
+			"res://assets/music/DavidKBD - Spooky Pack - Spooky Playtime-08 - Whispers of Darkness.ogg"
+		)
