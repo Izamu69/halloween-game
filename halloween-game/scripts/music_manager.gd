@@ -9,6 +9,7 @@ func _ready():
 	player.autoplay = false
 	player.volume_db = -80  # start silent
 	player.bus = "Music"  # optional, if you have a separate bus
+	player.connect("finished", Callable(self, "_on_music_finished"))
 
 func play_music(path: String):
 	var new_stream = load(path)
@@ -30,3 +31,7 @@ func play_music(path: String):
 	
 	# fade in new music
 	tween.tween_property(player, "volume_db", -10, fade_time)
+
+func _on_music_finished():
+	# Replay the current track when it ends
+	player.play()

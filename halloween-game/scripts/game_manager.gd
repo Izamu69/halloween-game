@@ -23,6 +23,7 @@ extends Node2D
 
 var pumpkin_spawn_points
 var ghost_spawn_points
+var last_difficulty_stage := -1
 
 func _ready() -> void:
 	PumpkinCount.pumpkin_count = 0
@@ -36,13 +37,14 @@ func _ready() -> void:
 	ghost_spawn_points = get_tree().get_nodes_in_group("ghost_spawns")
 	spawn_pumpkin()
 	spawn_ghost()
-	spawn_ghost()
 
 func _process(_delta: float) -> void:
 	if !get_node(".").has_node("pumpkin"):
 		spawn_pumpkin()
 		PumpkinCount.increase_count()
 		print(PumpkinCount.pumpkin_count)
+		
+	update_difficulty()
 
 var last_pumpkin_position = null
 func spawn_pumpkin() -> void:
@@ -75,6 +77,33 @@ func spawn_ghost() -> void:
 	var ghost = ghost_scene.instantiate()
 	ghost.position = spawn.global_position
 	add_child(ghost)
+
+func update_difficulty() -> void:
+	var stage = int(PumpkinCount.pumpkin_count / 3)
+	
+	if stage == last_difficulty_stage:
+		return
+	
+	last_difficulty_stage = stage
+	
+	match stage:
+		0:
+			set_overlay_color(Color(1, 1, 1, 0))  # transparent
+		1:
+			set_overlay_color(Color("6baa9a1e"))
+		2:
+			set_overlay_color(Color("3f7c7c28"))
+			spawn_ghost()
+		3:
+			set_overlay_color(Color("57143428"))
+			spawn_ghost()
+		_:
+			set_overlay_color(Color("7f0f283c"))
+			spawn_ghost()
+
+func set_overlay_color(new_color: Color):
+	var tween = create_tween()
+	tween.tween_property($ColorRect, "color", new_color, 0.5)
 
 func spawn_top_right() -> void:
 	var top_right_scenes = [top_right_scene, top_right_scene2]

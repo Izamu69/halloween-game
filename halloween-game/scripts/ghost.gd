@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 @onready var player = get_node("/root/game/player")
-@onready var game_manager = get_node("/root/game")
 @export var afraid = false
 @export var speed = 50
 var game_over = false
