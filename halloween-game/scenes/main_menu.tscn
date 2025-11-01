@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dg25revcpcuxi"]
+[gd_scene load_steps=8 format=3 uid="uid://dg25revcpcuxi"]
 
 [ext_resource type="Script" uid="uid://de4872gup7vun" path="res://scripts/main_menu.gd" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://bu15ayguefxuh" path="res://assets/fonts/PixelOperator8.ttf" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://c6cdbfox8xgxd" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_8ln24"]
 [ext_resource type="Texture2D" uid="uid://cttnktf2ne2wt" path="res://assets/sprites/e_key.png" id="3_wu84c"]
 [ext_resource type="Texture2D" uid="uid://cvf6shwqjrbw5" path="res://assets/sprites/q_key.png" id="4_8ln24"]
+[ext_resource type="PackedScene" uid="uid://di8owuwh4254c" path="res://scenes/pumpkin.tscn" id="6_oa1go"]
+[ext_resource type="PackedScene" uid="uid://cdmvjrwkbsv4f" path="res://scenes/ghost.tscn" id="7_tbmy8"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -42,8 +45,8 @@ theme_override_constants/separation = 17
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.61960787, 0.25882354, 0.15686275, 1)
-theme_override_fonts/font = ExtResource("1_l6cm7")
-text = "Pumpkin hunt"
+theme_override_fonts/font = ExtResource("2_8ln24")
+text = "Pumpkin Hunt"
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -73,3 +76,19 @@ text = "Quit"
 position = Vector2(73, 6.5)
 scale = Vector2(2, 2)
 texture = ExtResource("4_8ln24")
+
+[node name="ghost" parent="." instance=ExtResource("7_tbmy8")]
+position = Vector2(41, 126)
+scale = Vector2(2, 2)
+
+[node name="ghost2" parent="." instance=ExtResource("7_tbmy8")]
+position = Vector2(280, 103)
+scale = Vector2(2, 2)
+
+[node name="pumpkin" parent="." instance=ExtResource("6_oa1go")]
+position = Vector2(52, 37)
+scale = Vector2(1.75, 1.75)
+
+[node name="pumpkin2" parent="." instance=ExtResource("6_oa1go")]
+position = Vector2(269, 37)
+scale = Vector2(1.75, 1.75)

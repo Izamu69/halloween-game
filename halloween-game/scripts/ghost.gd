@@ -1,12 +1,15 @@
 extends CharacterBody2D
 
-@onready var player = get_node("/root/game/player")
+@onready var player = get_node_or_null("/root/game/player")
 @export var afraid = false
 @export var base_speed = 50
 var speed_multiplier := 1.0
 var game_over = false
 
 func _physics_process(_delta: float) -> void:
+	if not player:
+		return
+	
 	var direction = global_position.direction_to(player.global_position)
 	
 	var current_speed = base_speed * speed_multiplier

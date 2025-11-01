@@ -6,6 +6,10 @@ func _ready() -> void:
 		HighScore.high_score = PumpkinCount.pumpkin_count
 		HighScore.save_data()
 
+func _process(_delta):
+	$ghost.position.y = 92 + sin(Time.get_ticks_msec() / 300.0) * 2
+	$ghost2.position.y = 133 + sin(Time.get_ticks_msec() / 300.0) * 2
+
 func _input(_event):
 	if Input.is_key_pressed(KEY_R):
 		SceneChanger.change_scene_with_fade(

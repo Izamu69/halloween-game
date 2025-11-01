@@ -5,6 +5,10 @@ func _ready() -> void:
 	Transition.fade_out()
 	$VBoxContainer/Label2.text = "High score: " + str(HighScore.high_score)
 
+func _process(_delta):
+	$ghost.position.y = 126 + sin(Time.get_ticks_msec() / 300.0) * 2
+	$ghost2.position.y = 103 + sin(Time.get_ticks_msec() / 300.0) * 2
+
 func _input(_event):
 	if Input.is_key_pressed(KEY_E):
 		SceneChanger.change_scene_with_fade(

@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@onready var player = get_node("/root/game/player")
+@onready var player = get_node_or_null("/root/game/player")
 
 func _ready() -> void:
 	_start_glow_pulse()
