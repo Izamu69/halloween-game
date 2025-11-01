@@ -2,16 +2,18 @@ extends CharacterBody2D
 
 @onready var player = get_node("/root/game/player")
 @export var afraid = false
-@export var speed = 50
+@export var base_speed = 50
+var speed_multiplier := 1.0
 var game_over = false
 
 func _physics_process(_delta: float) -> void:
 	var direction = global_position.direction_to(player.global_position)
+	
+	var current_speed = base_speed * speed_multiplier
 	if afraid:
-		speed = 25
-	else:
-		speed = 50
-	velocity = direction * speed
+		current_speed *= 0.5
+
+	velocity = direction * current_speed
 	
 	if velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true

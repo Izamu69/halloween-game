@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://di8owuwh4254c"]
+[gd_scene load_steps=8 format=3 uid="uid://di8owuwh4254c"]
 
 [ext_resource type="Script" uid="uid://ciqvhg5qbotqg" path="res://scripts/pumpkin.gd" id="1_ch6vm"]
 [ext_resource type="Texture2D" uid="uid://cqxhimorb137e" path="res://assets/sprites/pumpkin.png" id="2_ch6vm"]
+[ext_resource type="Texture2D" uid="uid://d3bc5al64o2se" path="res://assets/sprites/pumpkin_glow.png" id="3_2inn6"]
 [ext_resource type="AudioStream" uid="uid://dd18kytaqvti3" path="res://assets/sounds/pickup_pumpkin.wav" id="3_8p3yo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qdl88"]
@@ -9,6 +10,17 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_ch6vm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kanjq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2inn6")
 }],
 "loop": true,
 "name": &"default",
@@ -23,7 +35,14 @@ scale = Vector2(0.75, 0.75)
 script = ExtResource("1_ch6vm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_qdl88")
+
+[node name="GlowSprite" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.627451, 0.99215686, 0, 0.39215687)
+position = Vector2(-3.5762787e-07, -8.34465e-07)
+scale = Vector2(1.1666666, 1.1666666)
+sprite_frames = SubResource("SpriteFrames_kanjq")
 
 [node name="Area2D" type="Area2D" parent="."]
 

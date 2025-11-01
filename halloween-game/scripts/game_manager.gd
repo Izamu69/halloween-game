@@ -89,21 +89,31 @@ func update_difficulty() -> void:
 	match stage:
 		0:
 			set_overlay_color(Color(1, 1, 1, 0))  # transparent
+			update_ghost_speeds(1.0)
 		1:
 			set_overlay_color(Color("6baa9a1e"))
+			update_ghost_speeds(1.1)
 		2:
 			set_overlay_color(Color("3f7c7c28"))
 			spawn_ghost()
+			update_ghost_speeds(1.2)
 		3:
 			set_overlay_color(Color("57143428"))
 			spawn_ghost()
+			update_ghost_speeds(1.3)
 		_:
 			set_overlay_color(Color("7f0f283c"))
 			spawn_ghost()
+			update_ghost_speeds(1.4)
 
 func set_overlay_color(new_color: Color):
 	var tween = create_tween()
 	tween.tween_property($ColorRect, "color", new_color, 0.5)
+
+func update_ghost_speeds(multiplier: float) -> void:
+	for ghost in get_tree().get_nodes_in_group("ghosts"):
+		if "speed_multiplier" in ghost:
+			ghost.speed_multiplier = multiplier
 
 func spawn_top_right() -> void:
 	var top_right_scenes = [top_right_scene, top_right_scene2]
